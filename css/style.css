@@ -1,0 +1,498 @@
+
+/* Подключение шрифтов */
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: AvenirIt;
+    src: url(../fonts/avenirnextcyr-light.ttf);
+}
+
+@font-face {
+    font-family: PoppinsSemibold;
+    src: url(../fonts/poppins-semibold.ttf);
+}
+
+@font-face {
+    font-family: UnboundedRegular;
+    src: url(../fonts/Unbounded-Regular.ttf);
+}
+
+@font-face {
+    font-family: UnboundedSemibold;
+    src: url(../fonts/Unbounded-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: PixelFonts;
+    src: url(../fonts/pixelfonts.ttf);
+}
+
+@font-face {
+    font-family: FontAwesome;
+    src: url(../fonts/FontAwesome.otf);
+}
+
+
+/* Сброс стилей */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #F9F9F9;
+}
+
+.preload {
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    overflow: hidden;
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+::placeholder {
+  color: #495057;
+  font-size: 18px;
+  font-family: JuraLight;
+  font-weight: bold;
+}
+
+li {
+  list-style-type: none;
+}
+
+/*Убрать полосу прокрутки у элемента*/
+
+.element::-webkit-scrollbar {
+  width: 0;
+}
+
+/*Убрать полосу прокрутки для всей страницы*/
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/**/
+
+/* Прелоадер */
+
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #242f3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #Fff;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% { transform: rotate(0deg);}
+  25% { transform: rotate(180deg);}
+  50% { transform: rotate(180deg);}
+  75% { transform: rotate(360deg);}
+  100% { transform: rotate(360deg);}
+}
+
+@keyframes loader-inner {
+  0% { height: 0%;}
+  25% { height: 0%;}
+  50% { height: 100%;}
+  75% { height: 100%;}
+  100% { height: 0%;}
+}
+
+/* Начальная страница */
+
+.start {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/start.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 200px;
+    -webkit-box-shadow: 1px -5px 14px 8px rgba(0, 0, 0, 0.69) inset;
+    -moz-box-shadow: 1px -5px 14px 8px rgba(0, 0, 0, 0.69) inset;
+    box-shadow: 1px -5px 14px 8px rgba(0, 0, 0, 0.69) inset;
+}
+
+.start-title {
+    font-family: AvenirIt;
+    font-size: 60px;
+    color: #F9F9F9;
+    text-transform: uppercase;
+    font-weight: bolder;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+.start-title:after {
+    display: block;
+    content: "";
+    background-color: #F9F9F9;
+    height: 4px;
+    width: 0%;
+    left: 50%;
+    position: absolute;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.start-title:hover:after{
+    transition: 0.5s;
+    width: 50%;
+}
+
+.run-line {
+    position: absolute;
+    bottom: 5%;
+    color: #F9F9F9;
+    font-family: AvenirIt;
+    font-size: 40px;
+    max-width: 100%;
+}
+
+/* Секция работ */
+
+.works {
+    width: 100%;
+    min-height: 1500px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 50px 0px;
+}
+
+.works-title {
+    font-family: AvenirIt;
+    font-size: 60px;
+    font-weight: bolder;
+    padding-top: 60px;
+    color: #F9F9F9;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+.works-title:after {
+    display: block;
+    content: "";
+    background-color: #F9F9F9;
+    height: 4px;
+    width: 0%;
+    left: 50%;
+    position: absolute;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.works-title:hover:after{
+    transition: 0.5s;
+    width: 50%;
+}
+
+.works-title-subtitle {
+    font-family: AvenirIt;
+    font-size: 30px;
+    font-weight: bolder;
+    padding-top: 15px;
+    color: #B0B0B0;
+    text-align: center;
+}
+
+.works-wrapper {
+    max-width: 1300px;
+    min-height: 1500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 150px;
+}
+
+.work-content {
+    padding-left: 200px;
+    max-width: 1100px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+.work-content1 {
+    padding-right: 200px;
+    max-width: 1100px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: row-reverse;
+    cursor: pointer;
+}
+
+.work-content-text {
+    font-family: AvenirIt;
+    font-size: 20px;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #8C8C8C;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.work-demo {
+    width: 500px;
+    height: 300px;
+    background-color: #474747;
+}
+
+/* Секция Features */
+
+.features {
+    width: 100%;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    padding-top: 100px;
+}
+
+.feautures-title {
+    font-family: AvenirIt;
+    font-size: 60px;
+    font-weight: bolder;
+    padding-top: 60px;
+    color: #F9F9F9;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+.feautures-title:after {
+    display: block;
+    content: "";
+    background-color: #F9F9F9;
+    height: 4px;
+    width: 0%;
+    left: 50%;
+    position: absolute;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.feautures-title:hover:after{
+    transition: 0.5s;
+    width: 50%;
+}
+
+.features-wrapper {
+    max-width: 1000px;
+    min-height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.features-content {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: all 0.6s;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.features-content::before {
+    content: "";
+    z-index: 0;
+    width: 0%;
+    height: 0%;
+    position: absolute;
+    transition: all 0.6s;
+    border-radius: 50%;
+}
+
+.features-content:hover::before {
+    background: rgba(74, 74, 74, 0.5);
+    transition: all 0.6s;
+    width: 150%;
+    height: 150%;
+}
+
+.features-content img {
+    width: 100px;
+    height: 100px;
+}
+
+.features-content-text {
+    font-family: AvenirIt;
+    font-size: 20px;
+    font-weight: bolder;
+    padding-top: 60px;
+    color: #F9F9F9;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+}
+
+.features-content-text {
+	-webkit-animation: features-content-text 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: features-content-text 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes features-content-text {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-800px);
+            transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes features-content-text {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-800px);
+            transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* Секция Контактов */
+
+.contact {
+    width: 100%;
+    min-height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    background-color: #000;
+    position: relative;
+}
+
+.contact-icon {
+    background-color: #FFF;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+    cursor: pointer;
+    border: 4px dashed #FFF;
+}
+
+.icon-contact {
+    font-family: FontAwesome;
+    font-size: 90px;
+    color: #000;
+    transition: all 0.4s;
+}
+
+.contact-icon:hover {
+    background-color: #000;
+    transition: all 0.4s;
+}
+
+.contact-icon:hover .icon-contact{
+    color: #fff;
+    transition: all 0.4s;
+}
+
+.run-line1 {
+    color: #F9F9F9;
+    font-family: AvenirIt;
+    font-size: 40px;
+    max-width: 100%;
+    position: absolute;
+    bottom: 5%;
+}
